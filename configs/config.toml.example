@@ -1,0 +1,71 @@
+# Timeclip Configuration File
+# Copy this file to ~/.timeclip/config.toml and customize your settings
+
+[general]
+# Daily goal in hours
+goal_time_hours = 8
+
+# Minimum hours before auto-logging to time tracking system
+auto_log_threshold_hours = 6.0
+
+# Days of the week to track (lowercase)
+track_days = ["monday", "tuesday", "wednesday", "thursday", "friday"]
+
+# How often to check system state (in seconds)
+check_interval_seconds = 60
+
+[database]
+# Path to SQLite database file
+path = "~/.timeclip/timeclip.db"
+
+[api]
+# Preferred time tracking provider: "magnetic" or "clockify"
+preferred_provider = "magnetic"
+
+# Number of retry attempts for failed API calls
+retry_attempts = 3
+
+# Timeout for API requests (in seconds)
+timeout_seconds = 30
+
+[api.magnetic]
+# Enable Magnetic integration
+enabled = true
+
+# Magnetic API base URL
+base_url = "https://app.magnetichq.com/v2/rest/coreAPI"
+
+# Your Magnetic API key (get from Magnetic settings)
+api_key = ""
+
+# Your Magnetic workspace ID
+workspace_id = ""
+
+# Default project ID for time entries
+project_id = ""
+
+[api.clockify]
+# Enable Clockify integration (secondary option)
+enabled = false
+
+# Clockify API base URL
+base_url = "https://api.clockify.me/api/v1"
+
+# Your Clockify API key (get from Clockify settings)
+api_key = ""
+
+# Your Clockify workspace ID
+workspace_id = ""
+
+# Default project ID for time entries
+project_id = ""
+
+[ui]
+# Show menu bar icon and time display
+show_menu_bar = true
+
+# Show seconds in menu bar time display
+show_seconds = false
+
+# Use 12-hour time format instead of 24-hour
+use_12_hour_format = true
